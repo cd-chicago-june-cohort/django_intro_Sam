@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/styles.css' %}">
+  </head>
+  <body>
+    <div id='success'>
+        <p>Thanks for submitting this form! You have submitted this form {{request.session.count}} times now</p>
+        <h3>Submitted information:</h3>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name:</td><td>{{request.session.input_name}}</td>
+                </tr>
+                <tr>
+                    <td>Location:</td><td>{{request.session.input_loc}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite Language:</td><td>{{request.session.input_lang}}</td>
+                </tr>
+                <tr>
+                    <td>Comment:</td><td>{{request.session.input_comment}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </body>
+</html>

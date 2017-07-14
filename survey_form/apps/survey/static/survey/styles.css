@@ -1,0 +1,37 @@
+form {
+    border: 1px solid black;
+    padding: 30px 0px 10px 90px;
+    width: 250px;
+    height: 280px;
+    margin: auto;
+}
+
+input, select, textarea {
+    display: block;
+    margin: 10px;
+}
+
+#submit{
+    width: 120px;
+    margin: auto;
+    box-shadow: 1px solid black;
+    background: blue;
+    border-radius: 0px;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+#success{
+    border: 1px solid black;
+    width: 300px;
+    height: 230px;
+    margin: auto;
+    padding: 20px 0px 20px 30px
+}
+
+td{
+    margin-right: 10px;
+}
