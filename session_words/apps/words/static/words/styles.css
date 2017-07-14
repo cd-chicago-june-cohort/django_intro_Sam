@@ -1,0 +1,71 @@
+
+label{
+    display: block;
+}
+
+input{
+    margin: 10px;
+}
+
+#left{
+    border-right: 5px solid black;
+    width: 50%;
+    height: 500px;
+    padding: 50px 0px 10px 150px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#right{
+    width: 49%;
+    height: 500px;
+    padding: 50px 0px 10px 80px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#type_word {
+    width: 160px;
+    height: 25px;
+}
+
+.red{
+    color: red;
+}
+
+.blue{
+    color: blue;
+}
+
+.green{
+    color: lime;
+}
+
+.big_font{
+    font-size: 30px;
+}
+
+.normal_font{
+    font-size: 20px;
+}
+
+.word_box{
+    height: 40px;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    text-align: right;
+}
+
+button {
+    border-radius: 1px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: 400px;
+    height: 30px; 
+}
