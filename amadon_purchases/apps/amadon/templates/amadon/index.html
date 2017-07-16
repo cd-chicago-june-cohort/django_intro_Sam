@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Amadon</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'amadon/styles.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+	</head>
+	<body>
+		<div class='col-md-6 col-md-offset-3'>
+			<h2>Amadon Store</h2>
+			<table class='table table-striped table-bordered table-hover' >
+			<thead>
+				<tr>
+				<th>Item</th><th>Price</th><th>Quantity</th><th>Actions</th>
+				</tr>
+			</thead>
+				{% for product in request.session.product_list %}
+					<tr>
+						<td>{{product.product_name}}</tdv>
+						<td>{{product.price}}</td>
+						<form action='/purchase' method='post'>
+						{% csrf_token %}
+						<td>
+							<select name='quantity'>
+								<option value=1 >1</option>
+								<option value=2 >2</option>
+								<option value=3 >3</option>
+								<option value=4 >4</option>
+							</select>
+						</td>
+						<td>
+							<input type='hidden' value={{product.product_id}} name='id'>
+							<input type='submit' value='Buy'>
+						</td>
+						</form>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</body>
+</html>

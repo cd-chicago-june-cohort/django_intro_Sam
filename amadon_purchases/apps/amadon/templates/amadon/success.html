@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Amadon</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'amadon/styles.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class='col-md-6 col-md-offset-3'>
+            <h2>Thank you for your purchase!</h2>
+            <div>We charged your credit card for ${{request.session.purchase.total}}</div>
+            <div>You have purchased {{request.session.purchase_history.total_products}} items so far and spent ${{request.session.purchase_history.total_spending}} on Amadon.com</div>
+            <a href='/'>Go back</a>
+        </div>
+    </body>
+</html>
