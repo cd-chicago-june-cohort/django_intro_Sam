@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ninja Gold</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'ninja_game/styles.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'ninja_game/script.js' %}"></script> 
+	</head>
+	<body>
+        <div class='container-fluid whole'>
+            <div class='row'>
+                <div class='col-md-12 header'><h1>Ninja Gold</h1></div>
+            </div> 
+            <div class='row'>
+                <div class='col-md-12 gold'><img src="{% static 'ninja_game/gold.png' %}"><p>{{request.session.gold}}</p></div>
+            </div>
+            <div class='row'>
+                <form method='post' action='/process_gold' id='pick_place'>{% csrf_token %}</form>
+                <div class='col-md-3 location'> <div class='inside-img farm'> </div> </div>
+                <div class='col-md-3 location'><div class='inside-img cave'></div></div>
+                <div class='col-md-3 location'><div class='inside-img house'></div></div>
+                <div class='col-md-3 location '><div class='inside-img casino'></div></div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12 activities-header'><h2>Activities:</h2></div>
+            </div> 
+            <div class='row'>
+                <div class='col-md-10 col-md-offset-1 activities'>
+                    {% for activity in request.session.activity_list %}
+                        <p class='{{activity.display_class}}'>{{activity.string}}</p>
+                    {% endfor %}
+                </div>
+            </div> 
+            <div class='row'>
+                <div class='col-md-12 footer'></div>
+            </div> 
+        </div>
+	</body>
+</html>
