@@ -1,0 +1,7 @@
+.new_user_form input, label {
+    display: block;
+}
+
+.edit_user_form input, label {
+    display: block;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Semi-Restful Users</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'sr_users/styles.css' %}">
+    </head>
+    <body>
+        <div class='container-fluid whole'>
+            <div class='row'>
+                <div class='col-md-12'><h1>Edit User {{user_id}}</h1></div>
+            </div>
+            <div class='col-md-6'>
+                <form method='post' action='/users/{{user_id}}/update' class='edit_user_form'>
+                    {% csrf_token %}
+                    <label for='first_name'>First Name:</label>
+                    <input type='text' name='first_name'>
+                    <label for='last_name'>Last Name:</label>
+                    <input type='text' name='last_name'>
+                    <label for='email'>Email:</label>
+                    <input type='text' name='email'>
+                    <input type='submit' value='Update'>
+                </form>
+            </div>
+            <div class='row'>
+                <div class='col-md-12'><a href='/users/{{user_id}}'>Show</a> | <a href='/users'>Go back</a></div>
+            </div>
+        </div>
+    </body>
+</html>
