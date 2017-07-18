@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'courses/styles.css' %}">
+    </head>
+    <body>
+        <div class='container-fluid'>
+            <h2>Are you sure you want to delete the following course?</h2>
+            <div>Name: {{course.name}}</div>
+            <div>Description: {{course.desc}}</div>
+            <a href='/'><button>No</button></a><a href='/destroy/{{course.id}}'><button>Yes! I want to delete this</button></a>
+        </div>
+    </body>
+</html>

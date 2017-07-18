@@ -1,0 +1,12 @@
+input, textarea, label {
+    display: block;
+}
+
+textarea{
+    margin-bottom: 10px;
+}
+
+
+button{
+    margin: 10px;
+}

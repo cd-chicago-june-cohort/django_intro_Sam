@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'courses/styles.css' %}">
+    </head>
+    <body>
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <h2>Add a new course</h2>
+                    <form action='/new' method='post' id='add_course'>
+                        {% csrf_token %}
+                        <label for='name'>Name:</label>
+                        <input type='text' name='name'>
+                        <label for='desc'>Description:</label>
+                        <textarea name='desc' form='add_course'></textarea>
+                        <input type='submit' value='Add'>
+                    </form>
+                    {% for message in messages %}
+                    <div>{{message}}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-12'>
+                    <h2>Courses</h2>
+                    <table class='table table-striped table-bordered table-hover' >
+                        <thead>
+                            <tr>
+                                <th>Course Name</th><th>Description</th><th>Date Added</th><th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in courses %}
+                            <tr>
+                                <td>{{course.name}}</td>
+                                <td>{{course.desc}}</td>
+                                <td>{{course.created_at}}</td>
+                                <td><a href='/remove/{{course.id}}'>Remove</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
