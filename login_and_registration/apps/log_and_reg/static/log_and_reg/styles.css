@@ -1,0 +1,19 @@
+h1{
+   text-align: center; 
+}
+
+.register, .login{
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    width: 120px;
+}
+
+.msg {
+    text-align: center;
+    color: red;
+}
+
+.footer{
+    height: 100px;
+}
