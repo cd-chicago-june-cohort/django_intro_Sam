@@ -29,7 +29,7 @@
                             <div class="col-4"><input class="btn btn-primary register" type="submit" value='Register'></div>
                         </div>
                     </form>
-                </div>
+                </div> 
                 {% if request.session.action == 'register' %}
                     {% for message in messages %}
                     <div class='col-md-12 msg'>{{message}}</div>

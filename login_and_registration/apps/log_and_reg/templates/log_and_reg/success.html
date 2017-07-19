@@ -9,8 +9,10 @@
         <link rel="stylesheet" href="{% static 'log_and_reg/styles.css' %}">
     </head>
     <body>
-        <div>{{greeting}}{{request.session.current_user_name}}</div>
-        <div>{{status}}</div>
-        <a href='/'><button>{{button}}</button></a>
+        <div class='row'>
+            <div class='col-md-12'><h1 class='col-md-12 success'>{{greeting}}{{request.session.current_user_name}}</h1></div>
+            <div class='col-md-12 success'>{{status}}</div>
+            <a href='/'><button class='btn btn-primary success_button'>{{button}}</button></a>
+        </div>
     </body>
 </html>

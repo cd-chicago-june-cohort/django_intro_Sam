@@ -31,13 +31,13 @@ class UserManager(models.Manager):
         errors = {}
         input_email = user_input['email']
         input_password = user_input['password']
-        #secret_input = bcrypt.hashpw(input_password.encode(), bcrypt.gensalt())
+        secret_input = bcrypt.hashpw(input_password.encode(), bcrypt.gensalt())
         check_user = User.objects.filter(email = input_email)
         secret_password = input_password.encode()
         if len(check_user) == 0:
             errors['not_registered'] = 'Email not in system. Register first before attempting login.'
-        #if  check_user[0].password:
-         #   errors['wrong_password'] = 'Incorrect password. Please try again.'
+        if secret_password <> check_user[0].password:
+            errors['wrong_password'] = 'Incorrect password. Please try again.'
         return errors 
 
 class User(models.Model):
