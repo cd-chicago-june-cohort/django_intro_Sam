@@ -1,0 +1,71 @@
+h1, h2{
+   text-align: center; 
+}
+
+.register, .login{
+    margin: auto;
+    margin-top: 10px;
+    display: block;
+    width: 120px;
+}
+
+.msg {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.footer{
+    height: 100px;
+}
+
+.left, .right {
+    display: inline-block;
+}
+
+.success-msg{
+    color: green;
+}
+
+.book-scroll {
+    height: 260px;
+    overflow: scroll;
+    border: 1px solid black;
+}
+
+.stars-menu{
+    width: 40px;
+    display: inline-block;
+}
+
+.star-picker{
+    margin: 10px 0px 10px 0px;
+    font-weight: bold;
+}
+
+.indent{
+    margin-left: 20px;
+}
+
+.author-font{
+    font-weight: bold;
+}
+
+.add-author {
+    margin-bottom: 10px;
+}
+
+.review-bar {
+    position: fixed;
+}
+
+.black-line{
+    height: 5px;
+    background: black;
+}
+
+.star-pic{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}

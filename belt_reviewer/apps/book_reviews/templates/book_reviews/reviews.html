@@ -1,0 +1,26 @@
+{% if request.session.review_format == 'home page format' %}
+    <h4 class='text-left'>Recent Book Reviews:</h4>
+    {% for review in reviews %}
+        <div class='col-md-10 black-line'></div>
+        <div class='col-md-8 col-md-offset-1'><a href='/books/{{review.book.id}}'>{{review.book.title}}</a></div>
+        <div class='col-md-8 col-md-offset-1 star-images'>{{review.stars}}</div>
+        <div class='col-md-8 col-md-offset-1'><a href='/user/{{review.creator.id}}'>{{review.creator.username}}</a> says: {{review.content}}</div>
+        <div class='col-md-8 col-md-offset-1'>Posted on {{review.created_at}}</div>
+        {% if review.creator.id == request.session.current_user_id %}
+            <div class='col-md-8 col-md-offset-1 text-right'><a href='/delete/{{review.id}}'>Delete</a></div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if request.session.review_format == 'book page format' %}
+    <h4 class='text-left'>Reviews:</h4>
+    {% for review in reviews %}
+        <div class='col-md-10 black-line'></div>
+        <div class='col-md-8 col-md-offset-1 star-images'>{{review.stars}}</div>
+        <div class='col-md-8 col-md-offset-1'><a href='/user/{{review.creator.id}}'>{{review.creator.username}}</a> says: {{review.content}}</div>
+        <div class='col-md-8 col-md-offset-1'>Posted on {{review.created_at}}</div>
+        {% if review.creator.id == request.session.current_user_id %}
+            <div class='col-md-8 col-md-offset-1 text-right'><a href='/delete/{{review.id}}'>Delete</a></div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
